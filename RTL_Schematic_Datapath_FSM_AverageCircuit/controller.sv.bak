@@ -1,0 +1,11 @@
+`timescale 1ns/1ns
+
+module controller(input start,co,output init,ready,ld);
+	
+	always@(start) begin
+	
+		if(start==1) begin init<=1'b1,ready<=1'b0 end; else begin
+			if(negedge start)
+		
+
+	

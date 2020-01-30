@@ -1,0 +1,1187 @@
+Analysis & Synthesis report for sin
+Wed May 30 18:46:17 2018
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for Inferred Entity Instance: Multi:inst12|lpm_mult:Mult0
+ 13. Parameter Settings for Inferred Entity Instance: Multi:inst11|lpm_mult:Mult0
+ 14. Parameter Settings for Inferred Entity Instance: Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1
+ 15. Parameter Settings for Inferred Entity Instance: Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2
+ 16. Parameter Settings for Inferred Entity Instance: Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1
+ 17. Parameter Settings for Inferred Entity Instance: Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2
+ 18. lpm_mult Parameter Settings by Entity Instance
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed May 30 18:46:17 2018       ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                      ; sin                                         ;
+; Top-level Entity Name              ; sin                                         ;
+; Family                             ; Cyclone IV GX                               ;
+; Total logic elements               ; 496                                         ;
+;     Total combinational functions  ; 480                                         ;
+;     Dedicated logic registers      ; 54                                          ;
+; Total registers                    ; 54                                          ;
+; Total pins                         ; 44                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total GXB Receiver Channel PCS     ; 0                                           ;
+; Total GXB Receiver Channel PMA     ; 0                                           ;
+; Total GXB Transmitter Channel PCS  ; 0                                           ;
+; Total GXB Transmitter Channel PMA  ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CGX15BF14A7     ;                    ;
+; Top-level entity name                                                      ; sin                ; sin                ;
+; Family name                                                                ; Cyclone IV GX      ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                                        ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                            ;
++----------------------------------+-----------------+------------------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+------------------------------------------+-------------------------------------------------------------------------+---------+
+; RegisterX.v                      ; yes             ; User Verilog HDL File                    ; C:/Users/asus/Desktop/sinos/RegisterX.v                                 ;         ;
+; TR_Register.v                    ; yes             ; User Verilog HDL File                    ; C:/Users/asus/Desktop/sinos/TR_Register.v                               ;         ;
+; Multi.v                          ; yes             ; User Verilog HDL File                    ; C:/Users/asus/Desktop/sinos/Multi.v                                     ;         ;
+; Add_Sub.v                        ; yes             ; User Verilog HDL File                    ; C:/Users/asus/Desktop/sinos/Add_Sub.v                                   ;         ;
+; Counter.v                        ; yes             ; User Verilog HDL File                    ; C:/Users/asus/Desktop/sinos/Counter.v                                   ;         ;
+; Memory_Rom.v                     ; yes             ; User Verilog HDL File                    ; C:/Users/asus/Desktop/sinos/Memory_Rom.v                                ;         ;
+; multiplex.v                      ; yes             ; User Verilog HDL File                    ; C:/Users/asus/Desktop/sinos/multiplex.v                                 ;         ;
+; SV_controller.sv                 ; yes             ; User SystemVerilog HDL File              ; C:/Users/asus/Desktop/sinos/SV_controller.sv                            ;         ;
+; sin.bdf                          ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/asus/Desktop/sinos/sin.bdf                                     ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mult.tdf     ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc   ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_add_sub.inc  ;         ;
+; multcore.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/multcore.inc     ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/bypassff.inc     ;         ;
+; altshift.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altshift.inc     ;         ;
+; db/mult_1ht.tdf                  ; yes             ; Auto-Generated Megafunction              ; C:/Users/asus/Desktop/sinos/db/mult_1ht.tdf                             ;         ;
+; alt_mac_mult.tdf                 ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_mac_mult.tdf ;         ;
+; lpm_mult.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mult.inc     ;         ;
+; db/mac_mult_r2h1.tdf             ; yes             ; Auto-Generated Megafunction              ; C:/Users/asus/Desktop/sinos/db/mac_mult_r2h1.tdf                        ;         ;
+; db/mult_jul.tdf                  ; yes             ; Auto-Generated Megafunction              ; C:/Users/asus/Desktop/sinos/db/mult_jul.tdf                             ;         ;
+; alt_mac_out.tdf                  ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_mac_out.tdf  ;         ;
+; alt_zaccum.inc                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/alt_zaccum.inc   ;         ;
+; db/mac_out_kv82.tdf              ; yes             ; Auto-Generated Megafunction              ; C:/Users/asus/Desktop/sinos/db/mac_out_kv82.tdf                         ;         ;
++----------------------------------+-----------------+------------------------------------------+-------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 44               ;
+;                          ;                  ;
+; DSP block 9-bit elements ; 0                ;
+;                          ;                  ;
+; Maximum fan-out node     ; clk~input        ;
+; Maximum fan-out          ; 54               ;
+; Total fan-out            ; 1910             ;
+; Average fan-out          ; 3.07             ;
++--------------------------+------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                               ;
++-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                         ; Entity Name   ; Library Name ;
++-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+---------------+--------------+
+; |sin                                          ; 480 (0)             ; 54 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 44   ; 0            ; |sin                                                                                                                        ; sin           ; work         ;
+;    |Add_Sub:inst7|                            ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|Add_Sub:inst7                                                                                                          ; Add_Sub       ; work         ;
+;    |Counter:inst4|                            ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|Counter:inst4                                                                                                          ; Counter       ; work         ;
+;    |Multi:inst11|                             ; 162 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|Multi:inst11                                                                                                           ; Multi         ; work         ;
+;       |lpm_mult:Mult0|                        ; 162 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|Multi:inst11|lpm_mult:Mult0                                                                                            ; lpm_mult      ; work         ;
+;          |mult_1ht:auto_generated|            ; 162 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated                                                                    ; mult_1ht      ; work         ;
+;             |alt_mac_mult:mac_mult1|          ; 162 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1                                             ; alt_mac_mult  ; work         ;
+;                |mac_mult_r2h1:auto_generated| ; 162 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated                ; mac_mult_r2h1 ; work         ;
+;                   |mult_jul:mult1|            ; 162 (162)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1 ; mult_jul      ; work         ;
+;    |Multi:inst12|                             ; 163 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|Multi:inst12                                                                                                           ; Multi         ; work         ;
+;       |lpm_mult:Mult0|                        ; 163 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|Multi:inst12|lpm_mult:Mult0                                                                                            ; lpm_mult      ; work         ;
+;          |mult_1ht:auto_generated|            ; 163 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated                                                                    ; mult_1ht      ; work         ;
+;             |alt_mac_mult:mac_mult1|          ; 163 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1                                             ; alt_mac_mult  ; work         ;
+;                |mac_mult_r2h1:auto_generated| ; 163 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated                ; mac_mult_r2h1 ; work         ;
+;                   |mult_jul:mult1|            ; 163 (163)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1 ; mult_jul      ; work         ;
+;    |RegisterX:inst|                           ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|RegisterX:inst                                                                                                         ; RegisterX     ; work         ;
+;    |SV_controller:inst10|                     ; 11 (11)             ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|SV_controller:inst10                                                                                                   ; SV_controller ; work         ;
+;    |TR_Register:inst15|                       ; 73 (73)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|TR_Register:inst15                                                                                                     ; TR_Register   ; work         ;
+;    |TR_Register:inst16|                       ; 18 (18)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|TR_Register:inst16                                                                                                     ; TR_Register   ; work         ;
+;    |multiplex:inst13|                         ; 34 (34)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |sin|multiplex:inst13                                                                                                       ; multiplex     ; work         ;
++-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                   ;
++-----------------------------------------------------+------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal    ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------+------------------------+
+; multiplex:inst13|w[0]                               ; multiplex:inst13|w[15] ; yes                    ;
+; multiplex:inst13|w[1]                               ; multiplex:inst13|w[15] ; yes                    ;
+; multiplex:inst13|w[4]                               ; multiplex:inst13|w[15] ; yes                    ;
+; multiplex:inst13|w[5]                               ; multiplex:inst13|w[15] ; yes                    ;
+; multiplex:inst13|w[2]                               ; multiplex:inst13|w[15] ; yes                    ;
+; multiplex:inst13|w[3]                               ; multiplex:inst13|w[15] ; yes                    ;
+; multiplex:inst13|w[6]                               ; multiplex:inst13|w[15] ; yes                    ;
+; multiplex:inst13|w[7]                               ; multiplex:inst13|w[15] ; yes                    ;
+; multiplex:inst13|w[10]                              ; multiplex:inst13|w[15] ; yes                    ;
+; multiplex:inst13|w[11]                              ; multiplex:inst13|w[15] ; yes                    ;
+; multiplex:inst13|w[8]                               ; multiplex:inst13|w[15] ; yes                    ;
+; multiplex:inst13|w[9]                               ; multiplex:inst13|w[15] ; yes                    ;
+; multiplex:inst13|w[13]                              ; multiplex:inst13|w[15] ; yes                    ;
+; multiplex:inst13|w[14]                              ; multiplex:inst13|w[15] ; yes                    ;
+; multiplex:inst13|w[12]                              ; multiplex:inst13|w[15] ; yes                    ;
+; multiplex:inst13|w[15]                              ; multiplex:inst13|w[15] ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                        ;                        ;
++-----------------------------------------------------+------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; SV_controller:inst10|ps[3..31]         ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 29 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 54    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 54    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 51    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |sin|Counter:inst4|w[1]            ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |sin|TR_Register:inst16|TR_out[2]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |sin|TR_Register:inst15|TR_out[13] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |sin|TR_Register:inst15|ShiftLeft0 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |sin|TR_Register:inst15|ShiftLeft0 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |sin|TR_Register:inst15|ShiftLeft0 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |sin|TR_Register:inst15|ShiftLeft0 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Multi:inst12|lpm_mult:Mult0         ;
++------------------------------------------------+---------------+---------------------+
+; Parameter Name                                 ; Value         ; Type                ;
++------------------------------------------------+---------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON            ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF           ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON            ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF           ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 16            ; Untyped             ;
+; LPM_WIDTHB                                     ; 16            ; Untyped             ;
+; LPM_WIDTHP                                     ; 32            ; Untyped             ;
+; LPM_WIDTHR                                     ; 32            ; Untyped             ;
+; LPM_WIDTHS                                     ; 1             ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED      ; Untyped             ;
+; LPM_PIPELINE                                   ; 0             ; Untyped             ;
+; LATENCY                                        ; 0             ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO            ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO            ; Untyped             ;
+; USE_EAB                                        ; OFF           ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 6             ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV GX ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL        ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT           ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO          ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0             ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0             ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_1ht      ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx            ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx            ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF           ; Untyped             ;
++------------------------------------------------+---------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Multi:inst11|lpm_mult:Mult0         ;
++------------------------------------------------+---------------+---------------------+
+; Parameter Name                                 ; Value         ; Type                ;
++------------------------------------------------+---------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON            ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF           ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON            ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF           ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 16            ; Untyped             ;
+; LPM_WIDTHB                                     ; 16            ; Untyped             ;
+; LPM_WIDTHP                                     ; 32            ; Untyped             ;
+; LPM_WIDTHR                                     ; 32            ; Untyped             ;
+; LPM_WIDTHS                                     ; 1             ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED      ; Untyped             ;
+; LPM_PIPELINE                                   ; 0             ; Untyped             ;
+; LATENCY                                        ; 0             ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO            ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO            ; Untyped             ;
+; USE_EAB                                        ; OFF           ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 6             ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV GX ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL        ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT           ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO          ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0             ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0             ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_1ht      ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx            ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx            ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF           ; Untyped             ;
++------------------------------------------------+---------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1 ;
++------------------------------+---------------+------------------------------------------------------------------------------+
+; Parameter Name               ; Value         ; Type                                                                         ;
++------------------------------+---------------+------------------------------------------------------------------------------+
+; LPM_WIDTHS                   ; 1             ; Untyped                                                                      ;
+; DATAA_WIDTH                  ; 16            ; Untyped                                                                      ;
+; DATAB_WIDTH                  ; 16            ; Untyped                                                                      ;
+; DATAA_CLOCK                  ; NONE          ; Untyped                                                                      ;
+; DATAB_CLOCK                  ; NONE          ; Untyped                                                                      ;
+; SIGNA_CLOCK                  ; NONE          ; Untyped                                                                      ;
+; SIGNB_CLOCK                  ; NONE          ; Untyped                                                                      ;
+; OUTPUT_CLOCK                 ; NONE          ; Untyped                                                                      ;
+; DATAA_CLEAR                  ; NONE          ; Untyped                                                                      ;
+; DATAB_CLEAR                  ; NONE          ; Untyped                                                                      ;
+; SIGNA_CLEAR                  ; NONE          ; Untyped                                                                      ;
+; SIGNB_CLEAR                  ; NONE          ; Untyped                                                                      ;
+; OUTPUT_CLEAR                 ; NONE          ; Untyped                                                                      ;
+; ROUND_CLOCK                  ; none          ; Untyped                                                                      ;
+; ROUND_CLEAR                  ; none          ; Untyped                                                                      ;
+; SATURATE_CLOCK               ; none          ; Untyped                                                                      ;
+; SATURATE_CLEAR               ; none          ; Untyped                                                                      ;
+; BYPASS_MULTIPLIER            ; NO            ; Untyped                                                                      ;
+; DYNAMIC_SCAN_CHAIN_SUPPORTED ; NO            ; Untyped                                                                      ;
+; USING_ROUNDING               ; NO            ; Untyped                                                                      ;
+; USING_SATURATION             ; NO            ; Untyped                                                                      ;
+; EXTRA_OUTPUT_CLOCK           ; none          ; Untyped                                                                      ;
+; EXTRA_SIGNA_CLOCK            ; none          ; Untyped                                                                      ;
+; EXTRA_SIGNB_CLOCK            ; none          ; Untyped                                                                      ;
+; EXTRA_OUTPUT_CLEAR           ; none          ; Untyped                                                                      ;
+; EXTRA_SIGNA_CLEAR            ; none          ; Untyped                                                                      ;
+; EXTRA_SIGNB_CLEAR            ; none          ; Untyped                                                                      ;
+; MULT_PIPELINE                ; 0             ; Untyped                                                                      ;
+; MULT_CLOCK                   ; NONE          ; Untyped                                                                      ;
+; MULT_CLEAR                   ; NONE          ; Untyped                                                                      ;
+; MULT_REPRESENTATION_A        ; UNSIGNED      ; Untyped                                                                      ;
+; MULT_REPRESENTATION_B        ; UNSIGNED      ; Untyped                                                                      ;
+; MULT_INPUT_A_IS_CONSTANT     ; NO            ; Untyped                                                                      ;
+; MULT_INPUT_B_IS_CONSTANT     ; NO            ; Untyped                                                                      ;
+; MULT_INPUT_A_FIXED_VALUE     ; Bx            ; Untyped                                                                      ;
+; MULT_INPUT_B_FIXED_VALUE     ; Bx            ; Untyped                                                                      ;
+; MULT_MAXIMIZE_SPEED          ; 5             ; Untyped                                                                      ;
+; CBXI_PARAMETER               ; mac_mult_r2h1 ; Untyped                                                                      ;
++------------------------------+---------------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2 ;
++-------------------------------+--------------+----------------------------------------------------------------------------+
+; Parameter Name                ; Value        ; Type                                                                       ;
++-------------------------------+--------------+----------------------------------------------------------------------------+
+; OPERATION_MODE                ; OUTPUT_ONLY  ; Untyped                                                                    ;
+; DATAA_WIDTH                   ; 32           ; Untyped                                                                    ;
+; DATAB_WIDTH                   ; 0            ; Untyped                                                                    ;
+; DATAC_WIDTH                   ; 0            ; Untyped                                                                    ;
+; DATAD_WIDTH                   ; 0            ; Untyped                                                                    ;
+; ADDNSUB0_CLOCK                ; NONE         ; Untyped                                                                    ;
+; ADDNSUB1_CLOCK                ; NONE         ; Untyped                                                                    ;
+; ROUND0_CLOCK                  ; none         ; Untyped                                                                    ;
+; ROUND1_CLOCK                  ; none         ; Untyped                                                                    ;
+; SATURATE_CLOCK                ; none         ; Untyped                                                                    ;
+; MULTABSATURATE_CLOCK          ; none         ; Untyped                                                                    ;
+; MULTCDSATURATE_CLOCK          ; none         ; Untyped                                                                    ;
+; ZEROACC_CLOCK                 ; NONE         ; Untyped                                                                    ;
+; SIGNA_CLOCK                   ; NONE         ; Untyped                                                                    ;
+; SIGNB_CLOCK                   ; NONE         ; Untyped                                                                    ;
+; OUTPUT_CLOCK                  ; NONE         ; Untyped                                                                    ;
+; ADDNSUB0_CLEAR                ; NONE         ; Untyped                                                                    ;
+; ADDNSUB1_CLEAR                ; NONE         ; Untyped                                                                    ;
+; ROUND0_CLEAR                  ; none         ; Untyped                                                                    ;
+; ROUND1_CLEAR                  ; none         ; Untyped                                                                    ;
+; SATURATE_CLEAR                ; none         ; Untyped                                                                    ;
+; MULTABSATURATE_CLEAR          ; none         ; Untyped                                                                    ;
+; MULTCDSATURATE_CLEAR          ; none         ; Untyped                                                                    ;
+; ZEROACC_CLEAR                 ; NONE         ; Untyped                                                                    ;
+; SIGNA_CLEAR                   ; NONE         ; Untyped                                                                    ;
+; SIGNB_CLEAR                   ; NONE         ; Untyped                                                                    ;
+; OUTPUT_CLEAR                  ; NONE         ; Untyped                                                                    ;
+; ADDNSUB0_PIPELINE_CLOCK       ; NONE         ; Untyped                                                                    ;
+; ADDNSUB1_PIPELINE_CLOCK       ; NONE         ; Untyped                                                                    ;
+; ROUND0_PIPELINE_CLOCK         ; none         ; Untyped                                                                    ;
+; ROUND1_PIPELINE_CLOCK         ; none         ; Untyped                                                                    ;
+; SATURATE_PIPELINE_CLOCK       ; none         ; Untyped                                                                    ;
+; MULTABSATURATE_PIPELINE_CLOCK ; none         ; Untyped                                                                    ;
+; MULTCDSATURATE_PIPELINE_CLOCK ; none         ; Untyped                                                                    ;
+; ZEROACC_PIPELINE_CLOCK        ; NONE         ; Untyped                                                                    ;
+; SIGNA_PIPELINE_CLOCK          ; NONE         ; Untyped                                                                    ;
+; SIGNB_PIPELINE_CLOCK          ; NONE         ; Untyped                                                                    ;
+; ADDNSUB0_PIPELINE_CLEAR       ; NONE         ; Untyped                                                                    ;
+; ADDNSUB1_PIPELINE_CLEAR       ; NONE         ; Untyped                                                                    ;
+; ROUND0_PIPELINE_CLEAR         ; none         ; Untyped                                                                    ;
+; ROUND1_PIPELINE_CLEAR         ; none         ; Untyped                                                                    ;
+; SATURATE_PIPELINE_CLEAR       ; none         ; Untyped                                                                    ;
+; MULTABSATURATE_PIPELINE_CLEAR ; none         ; Untyped                                                                    ;
+; MULTCDSATURATE_PIPELINE_CLEAR ; none         ; Untyped                                                                    ;
+; ZEROACC_PIPELINE_CLEAR        ; NONE         ; Untyped                                                                    ;
+; SIGNA_PIPELINE_CLEAR          ; NONE         ; Untyped                                                                    ;
+; SIGNB_PIPELINE_CLEAR          ; NONE         ; Untyped                                                                    ;
+; MODE0_CLOCK                   ; none         ; Untyped                                                                    ;
+; MODE1_CLOCK                   ; none         ; Untyped                                                                    ;
+; ZEROACC1_CLOCK                ; none         ; Untyped                                                                    ;
+; SATURATE1_CLOCK               ; none         ; Untyped                                                                    ;
+; OUTPUT1_CLOCK                 ; none         ; Untyped                                                                    ;
+; OUTPUT2_CLOCK                 ; none         ; Untyped                                                                    ;
+; OUTPUT3_CLOCK                 ; none         ; Untyped                                                                    ;
+; OUTPUT4_CLOCK                 ; none         ; Untyped                                                                    ;
+; OUTPUT5_CLOCK                 ; none         ; Untyped                                                                    ;
+; OUTPUT6_CLOCK                 ; none         ; Untyped                                                                    ;
+; OUTPUT7_CLOCK                 ; none         ; Untyped                                                                    ;
+; MODE0_CLEAR                   ; none         ; Untyped                                                                    ;
+; MODE1_CLEAR                   ; none         ; Untyped                                                                    ;
+; ZEROACC1_CLEAR                ; none         ; Untyped                                                                    ;
+; SATURATE1_CLEAR               ; none         ; Untyped                                                                    ;
+; OUTPUT1_CLEAR                 ; none         ; Untyped                                                                    ;
+; OUTPUT2_CLEAR                 ; none         ; Untyped                                                                    ;
+; OUTPUT3_CLEAR                 ; none         ; Untyped                                                                    ;
+; OUTPUT4_CLEAR                 ; none         ; Untyped                                                                    ;
+; OUTPUT5_CLEAR                 ; none         ; Untyped                                                                    ;
+; OUTPUT6_CLEAR                 ; none         ; Untyped                                                                    ;
+; OUTPUT7_CLEAR                 ; none         ; Untyped                                                                    ;
+; MODE0_PIPELINE_CLOCK          ; none         ; Untyped                                                                    ;
+; MODE1_PIPELINE_CLOCK          ; none         ; Untyped                                                                    ;
+; ZEROACC1_PIPELINE_CLOCK       ; none         ; Untyped                                                                    ;
+; SATURATE1_PIPELINE_CLOCK      ; none         ; Untyped                                                                    ;
+; MODE0_PIPELINE_CLEAR          ; none         ; Untyped                                                                    ;
+; MODE1_PIPELINE_CLEAR          ; none         ; Untyped                                                                    ;
+; ZEROACC1_PIPELINE_CLEAR       ; none         ; Untyped                                                                    ;
+; SATURATE1_PIPELINE_CLEAR      ; none         ; Untyped                                                                    ;
+; FIRST_ADDER0_CLOCK            ; NONE         ; Untyped                                                                    ;
+; FIRST_ADDER1_CLOCK            ; NONE         ; Untyped                                                                    ;
+; FIRST_ADDER0_CLEAR            ; NONE         ; Untyped                                                                    ;
+; FIRST_ADDER1_CLEAR            ; NONE         ; Untyped                                                                    ;
+; DATAA_FORCED_TO_ZERO          ; NO           ; Untyped                                                                    ;
+; DATAC_FORCED_TO_ZERO          ; NO           ; Untyped                                                                    ;
+; USING_ROUNDING                ; NO           ; Untyped                                                                    ;
+; USING_SATURATION              ; NO           ; Untyped                                                                    ;
+; USING_MULT_SATURATION         ; NO           ; Untyped                                                                    ;
+; USING_LOADABLE_ACCUM          ; NO           ; Untyped                                                                    ;
+; LOADABLE_ACCUM_SUPPORTED      ; NO           ; Untyped                                                                    ;
+; USING_CHAINOUT                ; NO           ; Untyped                                                                    ;
+; CHAININ_WIDTH                 ; 0            ; Untyped                                                                    ;
+; CHAINOUT_PIPELINE_CLOCK       ; none         ; Untyped                                                                    ;
+; CHAINOUT_PIPELINE_CLEAR       ; none         ; Untyped                                                                    ;
+; CBXI_PARAMETER                ; mac_out_kv82 ; Untyped                                                                    ;
++-------------------------------+--------------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1 ;
++------------------------------+---------------+------------------------------------------------------------------------------+
+; Parameter Name               ; Value         ; Type                                                                         ;
++------------------------------+---------------+------------------------------------------------------------------------------+
+; LPM_WIDTHS                   ; 1             ; Untyped                                                                      ;
+; DATAA_WIDTH                  ; 16            ; Untyped                                                                      ;
+; DATAB_WIDTH                  ; 16            ; Untyped                                                                      ;
+; DATAA_CLOCK                  ; NONE          ; Untyped                                                                      ;
+; DATAB_CLOCK                  ; NONE          ; Untyped                                                                      ;
+; SIGNA_CLOCK                  ; NONE          ; Untyped                                                                      ;
+; SIGNB_CLOCK                  ; NONE          ; Untyped                                                                      ;
+; OUTPUT_CLOCK                 ; NONE          ; Untyped                                                                      ;
+; DATAA_CLEAR                  ; NONE          ; Untyped                                                                      ;
+; DATAB_CLEAR                  ; NONE          ; Untyped                                                                      ;
+; SIGNA_CLEAR                  ; NONE          ; Untyped                                                                      ;
+; SIGNB_CLEAR                  ; NONE          ; Untyped                                                                      ;
+; OUTPUT_CLEAR                 ; NONE          ; Untyped                                                                      ;
+; ROUND_CLOCK                  ; none          ; Untyped                                                                      ;
+; ROUND_CLEAR                  ; none          ; Untyped                                                                      ;
+; SATURATE_CLOCK               ; none          ; Untyped                                                                      ;
+; SATURATE_CLEAR               ; none          ; Untyped                                                                      ;
+; BYPASS_MULTIPLIER            ; NO            ; Untyped                                                                      ;
+; DYNAMIC_SCAN_CHAIN_SUPPORTED ; NO            ; Untyped                                                                      ;
+; USING_ROUNDING               ; NO            ; Untyped                                                                      ;
+; USING_SATURATION             ; NO            ; Untyped                                                                      ;
+; EXTRA_OUTPUT_CLOCK           ; none          ; Untyped                                                                      ;
+; EXTRA_SIGNA_CLOCK            ; none          ; Untyped                                                                      ;
+; EXTRA_SIGNB_CLOCK            ; none          ; Untyped                                                                      ;
+; EXTRA_OUTPUT_CLEAR           ; none          ; Untyped                                                                      ;
+; EXTRA_SIGNA_CLEAR            ; none          ; Untyped                                                                      ;
+; EXTRA_SIGNB_CLEAR            ; none          ; Untyped                                                                      ;
+; MULT_PIPELINE                ; 0             ; Untyped                                                                      ;
+; MULT_CLOCK                   ; NONE          ; Untyped                                                                      ;
+; MULT_CLEAR                   ; NONE          ; Untyped                                                                      ;
+; MULT_REPRESENTATION_A        ; UNSIGNED      ; Untyped                                                                      ;
+; MULT_REPRESENTATION_B        ; UNSIGNED      ; Untyped                                                                      ;
+; MULT_INPUT_A_IS_CONSTANT     ; NO            ; Untyped                                                                      ;
+; MULT_INPUT_B_IS_CONSTANT     ; NO            ; Untyped                                                                      ;
+; MULT_INPUT_A_FIXED_VALUE     ; Bx            ; Untyped                                                                      ;
+; MULT_INPUT_B_FIXED_VALUE     ; Bx            ; Untyped                                                                      ;
+; MULT_MAXIMIZE_SPEED          ; 5             ; Untyped                                                                      ;
+; CBXI_PARAMETER               ; mac_mult_r2h1 ; Untyped                                                                      ;
++------------------------------+---------------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2 ;
++-------------------------------+--------------+----------------------------------------------------------------------------+
+; Parameter Name                ; Value        ; Type                                                                       ;
++-------------------------------+--------------+----------------------------------------------------------------------------+
+; OPERATION_MODE                ; OUTPUT_ONLY  ; Untyped                                                                    ;
+; DATAA_WIDTH                   ; 32           ; Untyped                                                                    ;
+; DATAB_WIDTH                   ; 0            ; Untyped                                                                    ;
+; DATAC_WIDTH                   ; 0            ; Untyped                                                                    ;
+; DATAD_WIDTH                   ; 0            ; Untyped                                                                    ;
+; ADDNSUB0_CLOCK                ; NONE         ; Untyped                                                                    ;
+; ADDNSUB1_CLOCK                ; NONE         ; Untyped                                                                    ;
+; ROUND0_CLOCK                  ; none         ; Untyped                                                                    ;
+; ROUND1_CLOCK                  ; none         ; Untyped                                                                    ;
+; SATURATE_CLOCK                ; none         ; Untyped                                                                    ;
+; MULTABSATURATE_CLOCK          ; none         ; Untyped                                                                    ;
+; MULTCDSATURATE_CLOCK          ; none         ; Untyped                                                                    ;
+; ZEROACC_CLOCK                 ; NONE         ; Untyped                                                                    ;
+; SIGNA_CLOCK                   ; NONE         ; Untyped                                                                    ;
+; SIGNB_CLOCK                   ; NONE         ; Untyped                                                                    ;
+; OUTPUT_CLOCK                  ; NONE         ; Untyped                                                                    ;
+; ADDNSUB0_CLEAR                ; NONE         ; Untyped                                                                    ;
+; ADDNSUB1_CLEAR                ; NONE         ; Untyped                                                                    ;
+; ROUND0_CLEAR                  ; none         ; Untyped                                                                    ;
+; ROUND1_CLEAR                  ; none         ; Untyped                                                                    ;
+; SATURATE_CLEAR                ; none         ; Untyped                                                                    ;
+; MULTABSATURATE_CLEAR          ; none         ; Untyped                                                                    ;
+; MULTCDSATURATE_CLEAR          ; none         ; Untyped                                                                    ;
+; ZEROACC_CLEAR                 ; NONE         ; Untyped                                                                    ;
+; SIGNA_CLEAR                   ; NONE         ; Untyped                                                                    ;
+; SIGNB_CLEAR                   ; NONE         ; Untyped                                                                    ;
+; OUTPUT_CLEAR                  ; NONE         ; Untyped                                                                    ;
+; ADDNSUB0_PIPELINE_CLOCK       ; NONE         ; Untyped                                                                    ;
+; ADDNSUB1_PIPELINE_CLOCK       ; NONE         ; Untyped                                                                    ;
+; ROUND0_PIPELINE_CLOCK         ; none         ; Untyped                                                                    ;
+; ROUND1_PIPELINE_CLOCK         ; none         ; Untyped                                                                    ;
+; SATURATE_PIPELINE_CLOCK       ; none         ; Untyped                                                                    ;
+; MULTABSATURATE_PIPELINE_CLOCK ; none         ; Untyped                                                                    ;
+; MULTCDSATURATE_PIPELINE_CLOCK ; none         ; Untyped                                                                    ;
+; ZEROACC_PIPELINE_CLOCK        ; NONE         ; Untyped                                                                    ;
+; SIGNA_PIPELINE_CLOCK          ; NONE         ; Untyped                                                                    ;
+; SIGNB_PIPELINE_CLOCK          ; NONE         ; Untyped                                                                    ;
+; ADDNSUB0_PIPELINE_CLEAR       ; NONE         ; Untyped                                                                    ;
+; ADDNSUB1_PIPELINE_CLEAR       ; NONE         ; Untyped                                                                    ;
+; ROUND0_PIPELINE_CLEAR         ; none         ; Untyped                                                                    ;
+; ROUND1_PIPELINE_CLEAR         ; none         ; Untyped                                                                    ;
+; SATURATE_PIPELINE_CLEAR       ; none         ; Untyped                                                                    ;
+; MULTABSATURATE_PIPELINE_CLEAR ; none         ; Untyped                                                                    ;
+; MULTCDSATURATE_PIPELINE_CLEAR ; none         ; Untyped                                                                    ;
+; ZEROACC_PIPELINE_CLEAR        ; NONE         ; Untyped                                                                    ;
+; SIGNA_PIPELINE_CLEAR          ; NONE         ; Untyped                                                                    ;
+; SIGNB_PIPELINE_CLEAR          ; NONE         ; Untyped                                                                    ;
+; MODE0_CLOCK                   ; none         ; Untyped                                                                    ;
+; MODE1_CLOCK                   ; none         ; Untyped                                                                    ;
+; ZEROACC1_CLOCK                ; none         ; Untyped                                                                    ;
+; SATURATE1_CLOCK               ; none         ; Untyped                                                                    ;
+; OUTPUT1_CLOCK                 ; none         ; Untyped                                                                    ;
+; OUTPUT2_CLOCK                 ; none         ; Untyped                                                                    ;
+; OUTPUT3_CLOCK                 ; none         ; Untyped                                                                    ;
+; OUTPUT4_CLOCK                 ; none         ; Untyped                                                                    ;
+; OUTPUT5_CLOCK                 ; none         ; Untyped                                                                    ;
+; OUTPUT6_CLOCK                 ; none         ; Untyped                                                                    ;
+; OUTPUT7_CLOCK                 ; none         ; Untyped                                                                    ;
+; MODE0_CLEAR                   ; none         ; Untyped                                                                    ;
+; MODE1_CLEAR                   ; none         ; Untyped                                                                    ;
+; ZEROACC1_CLEAR                ; none         ; Untyped                                                                    ;
+; SATURATE1_CLEAR               ; none         ; Untyped                                                                    ;
+; OUTPUT1_CLEAR                 ; none         ; Untyped                                                                    ;
+; OUTPUT2_CLEAR                 ; none         ; Untyped                                                                    ;
+; OUTPUT3_CLEAR                 ; none         ; Untyped                                                                    ;
+; OUTPUT4_CLEAR                 ; none         ; Untyped                                                                    ;
+; OUTPUT5_CLEAR                 ; none         ; Untyped                                                                    ;
+; OUTPUT6_CLEAR                 ; none         ; Untyped                                                                    ;
+; OUTPUT7_CLEAR                 ; none         ; Untyped                                                                    ;
+; MODE0_PIPELINE_CLOCK          ; none         ; Untyped                                                                    ;
+; MODE1_PIPELINE_CLOCK          ; none         ; Untyped                                                                    ;
+; ZEROACC1_PIPELINE_CLOCK       ; none         ; Untyped                                                                    ;
+; SATURATE1_PIPELINE_CLOCK      ; none         ; Untyped                                                                    ;
+; MODE0_PIPELINE_CLEAR          ; none         ; Untyped                                                                    ;
+; MODE1_PIPELINE_CLEAR          ; none         ; Untyped                                                                    ;
+; ZEROACC1_PIPELINE_CLEAR       ; none         ; Untyped                                                                    ;
+; SATURATE1_PIPELINE_CLEAR      ; none         ; Untyped                                                                    ;
+; FIRST_ADDER0_CLOCK            ; NONE         ; Untyped                                                                    ;
+; FIRST_ADDER1_CLOCK            ; NONE         ; Untyped                                                                    ;
+; FIRST_ADDER0_CLEAR            ; NONE         ; Untyped                                                                    ;
+; FIRST_ADDER1_CLEAR            ; NONE         ; Untyped                                                                    ;
+; DATAA_FORCED_TO_ZERO          ; NO           ; Untyped                                                                    ;
+; DATAC_FORCED_TO_ZERO          ; NO           ; Untyped                                                                    ;
+; USING_ROUNDING                ; NO           ; Untyped                                                                    ;
+; USING_SATURATION              ; NO           ; Untyped                                                                    ;
+; USING_MULT_SATURATION         ; NO           ; Untyped                                                                    ;
+; USING_LOADABLE_ACCUM          ; NO           ; Untyped                                                                    ;
+; LOADABLE_ACCUM_SUPPORTED      ; NO           ; Untyped                                                                    ;
+; USING_CHAINOUT                ; NO           ; Untyped                                                                    ;
+; CHAININ_WIDTH                 ; 0            ; Untyped                                                                    ;
+; CHAINOUT_PIPELINE_CLOCK       ; none         ; Untyped                                                                    ;
+; CHAINOUT_PIPELINE_CLEAR       ; none         ; Untyped                                                                    ;
+; CBXI_PARAMETER                ; mac_out_kv82 ; Untyped                                                                    ;
++-------------------------------+--------------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                      ;
++---------------------------------------+-----------------------------+
+; Name                                  ; Value                       ;
++---------------------------------------+-----------------------------+
+; Number of entity instances            ; 2                           ;
+; Entity Instance                       ; Multi:inst12|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 16                          ;
+;     -- LPM_WIDTHB                     ; 16                          ;
+;     -- LPM_WIDTHP                     ; 32                          ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                    ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                          ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                          ;
+;     -- USE_EAB                        ; OFF                         ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                        ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                          ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                          ;
+; Entity Instance                       ; Multi:inst11|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 16                          ;
+;     -- LPM_WIDTHB                     ; 16                          ;
+;     -- LPM_WIDTHP                     ; 32                          ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                    ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                          ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                          ;
+;     -- USE_EAB                        ; OFF                         ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                        ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                          ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                          ;
++---------------------------------------+-----------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 44                          ;
+; cycloneiii_ff         ; 54                          ;
+;     CLR               ; 3                           ;
+;     ENA CLR           ; 35                          ;
+;     ENA CLR SLD       ; 16                          ;
+; cycloneiii_lcell_comb ; 480                         ;
+;     arith             ; 142                         ;
+;         2 data inputs ; 15                          ;
+;         3 data inputs ; 127                         ;
+;     normal            ; 338                         ;
+;         2 data inputs ; 31                          ;
+;         3 data inputs ; 97                          ;
+;         4 data inputs ; 210                         ;
+;                       ;                             ;
+; Max LUT depth         ; 15.10                       ;
+; Average LUT depth     ; 9.59                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Wed May 30 18:45:59 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sin -c sin
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file registerx.v
+    Info (12023): Found entity 1: RegisterX File: C:/Users/asus/Desktop/sinos/RegisterX.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file tr_register.v
+    Info (12023): Found entity 1: TR_Register File: C:/Users/asus/Desktop/sinos/TR_Register.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file multi.v
+    Info (12023): Found entity 1: Multi File: C:/Users/asus/Desktop/sinos/Multi.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file add_sub.v
+    Info (12023): Found entity 1: Add_Sub File: C:/Users/asus/Desktop/sinos/Add_Sub.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file counter.v
+    Info (12023): Found entity 1: Counter File: C:/Users/asus/Desktop/sinos/Counter.v Line: 3
+Warning (10259): Verilog HDL error at Memory_Rom.v(13): constant value overflow File: C:/Users/asus/Desktop/sinos/Memory_Rom.v Line: 13
+Warning (10259): Verilog HDL error at Memory_Rom.v(14): constant value overflow File: C:/Users/asus/Desktop/sinos/Memory_Rom.v Line: 14
+Warning (10259): Verilog HDL error at Memory_Rom.v(15): constant value overflow File: C:/Users/asus/Desktop/sinos/Memory_Rom.v Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file memory_rom.v
+    Info (12023): Found entity 1: Memory_Rom File: C:/Users/asus/Desktop/sinos/Memory_Rom.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file multiplex.v
+    Info (12023): Found entity 1: multiplex File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file sv_controller.sv
+    Info (12023): Found entity 1: SV_controller File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 3
+Warning (12125): Using design file sin.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: sin
+Info (12127): Elaborating entity "sin" for the top level hierarchy
+Info (12128): Elaborating entity "SV_controller" for hierarchy "SV_controller:inst10"
+Warning (10235): Verilog HDL Always Construct warning at SV_controller.sv(19): variable "sigout" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 19
+Warning (10230): Verilog HDL assignment warning at SV_controller.sv(21): truncated value with size 32 to match size of target (1) File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 21
+Info (12128): Elaborating entity "TR_Register" for hierarchy "TR_Register:inst15"
+Warning (10235): Verilog HDL Always Construct warning at TR_Register.v(16): variable "y" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/asus/Desktop/sinos/TR_Register.v Line: 16
+Info (12128): Elaborating entity "Multi" for hierarchy "Multi:inst12"
+Info (12128): Elaborating entity "multiplex" for hierarchy "multiplex:inst13"
+Warning (10235): Verilog HDL Always Construct warning at multiplex.v(6): variable "a" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 6
+Warning (10235): Verilog HDL Always Construct warning at multiplex.v(7): variable "b" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 7
+Warning (10240): Verilog HDL Always Construct warning at multiplex.v(5): inferring latch(es) for variable "w", which holds its previous value in one or more paths through the always construct File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+Info (10041): Inferred latch for "w[0]" at multiplex.v(5) File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+Info (10041): Inferred latch for "w[1]" at multiplex.v(5) File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+Info (10041): Inferred latch for "w[2]" at multiplex.v(5) File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+Info (10041): Inferred latch for "w[3]" at multiplex.v(5) File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+Info (10041): Inferred latch for "w[4]" at multiplex.v(5) File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+Info (10041): Inferred latch for "w[5]" at multiplex.v(5) File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+Info (10041): Inferred latch for "w[6]" at multiplex.v(5) File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+Info (10041): Inferred latch for "w[7]" at multiplex.v(5) File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+Info (10041): Inferred latch for "w[8]" at multiplex.v(5) File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+Info (10041): Inferred latch for "w[9]" at multiplex.v(5) File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+Info (10041): Inferred latch for "w[10]" at multiplex.v(5) File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+Info (10041): Inferred latch for "w[11]" at multiplex.v(5) File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+Info (10041): Inferred latch for "w[12]" at multiplex.v(5) File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+Info (10041): Inferred latch for "w[13]" at multiplex.v(5) File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+Info (10041): Inferred latch for "w[14]" at multiplex.v(5) File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+Info (10041): Inferred latch for "w[15]" at multiplex.v(5) File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+Info (12128): Elaborating entity "Memory_Rom" for hierarchy "Memory_Rom:inst3"
+Warning (10230): Verilog HDL assignment warning at Memory_Rom.v(8): truncated value with size 32 to match size of target (16) File: C:/Users/asus/Desktop/sinos/Memory_Rom.v Line: 8
+Warning (10230): Verilog HDL assignment warning at Memory_Rom.v(9): truncated value with size 32 to match size of target (16) File: C:/Users/asus/Desktop/sinos/Memory_Rom.v Line: 9
+Warning (10230): Verilog HDL assignment warning at Memory_Rom.v(10): truncated value with size 32 to match size of target (16) File: C:/Users/asus/Desktop/sinos/Memory_Rom.v Line: 10
+Warning (10230): Verilog HDL assignment warning at Memory_Rom.v(11): truncated value with size 32 to match size of target (16) File: C:/Users/asus/Desktop/sinos/Memory_Rom.v Line: 11
+Warning (10230): Verilog HDL assignment warning at Memory_Rom.v(12): truncated value with size 32 to match size of target (16) File: C:/Users/asus/Desktop/sinos/Memory_Rom.v Line: 12
+Warning (10230): Verilog HDL assignment warning at Memory_Rom.v(13): truncated value with size 32 to match size of target (16) File: C:/Users/asus/Desktop/sinos/Memory_Rom.v Line: 13
+Warning (10230): Verilog HDL assignment warning at Memory_Rom.v(14): truncated value with size 32 to match size of target (16) File: C:/Users/asus/Desktop/sinos/Memory_Rom.v Line: 14
+Warning (10230): Verilog HDL assignment warning at Memory_Rom.v(15): truncated value with size 32 to match size of target (16) File: C:/Users/asus/Desktop/sinos/Memory_Rom.v Line: 15
+Info (12128): Elaborating entity "Counter" for hierarchy "Counter:inst4"
+Info (12128): Elaborating entity "RegisterX" for hierarchy "RegisterX:inst"
+Info (12128): Elaborating entity "Add_Sub" for hierarchy "Add_Sub:inst7"
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Multi:inst12|Mult0" File: C:/Users/asus/Desktop/sinos/Multi.v Line: 5
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Multi:inst11|Mult0" File: C:/Users/asus/Desktop/sinos/Multi.v Line: 5
+Info (12130): Elaborated megafunction instantiation "Multi:inst12|lpm_mult:Mult0" File: C:/Users/asus/Desktop/sinos/Multi.v Line: 5
+Info (12133): Instantiated megafunction "Multi:inst12|lpm_mult:Mult0" with the following parameter: File: C:/Users/asus/Desktop/sinos/Multi.v Line: 5
+    Info (12134): Parameter "LPM_WIDTHA" = "16"
+    Info (12134): Parameter "LPM_WIDTHB" = "16"
+    Info (12134): Parameter "LPM_WIDTHP" = "32"
+    Info (12134): Parameter "LPM_WIDTHR" = "32"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_1ht.tdf
+    Info (12023): Found entity 1: mult_1ht File: C:/Users/asus/Desktop/sinos/db/mult_1ht.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "Multi:inst11|lpm_mult:Mult0" File: C:/Users/asus/Desktop/sinos/Multi.v Line: 5
+Info (12133): Instantiated megafunction "Multi:inst11|lpm_mult:Mult0" with the following parameter: File: C:/Users/asus/Desktop/sinos/Multi.v Line: 5
+    Info (12134): Parameter "LPM_WIDTHA" = "16"
+    Info (12134): Parameter "LPM_WIDTHB" = "16"
+    Info (12134): Parameter "LPM_WIDTHP" = "32"
+    Info (12134): Parameter "LPM_WIDTHR" = "32"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (270001): Converted 2 DSP block slices
+    Info (270002): Used 2 DSP blocks before DSP block balancing
+        Info (270003): Used 2 DSP block slices in "Simple Multiplier (18-bit)" mode implemented in approximately 2 DSP blocks
+    Info (270013): Converted the following 2 DSP block slices to logic elements
+        Info (270006): DSP block slice in "Simple Multiplier (18-bit)" mode with output node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|mac_out2" File: C:/Users/asus/Desktop/sinos/db/mult_1ht.tdf Line: 44
+            Info (270004): DSP block output node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|mac_out2" File: C:/Users/asus/Desktop/sinos/db/mult_1ht.tdf Line: 44
+            Info (270005): DSP block multiplier node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|mac_mult1" File: C:/Users/asus/Desktop/sinos/db/mult_1ht.tdf Line: 35
+        Info (270006): DSP block slice in "Simple Multiplier (18-bit)" mode with output node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|mac_out2" File: C:/Users/asus/Desktop/sinos/db/mult_1ht.tdf Line: 44
+            Info (270004): DSP block output node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|mac_out2" File: C:/Users/asus/Desktop/sinos/db/mult_1ht.tdf Line: 44
+            Info (270005): DSP block multiplier node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|mac_mult1" File: C:/Users/asus/Desktop/sinos/db/mult_1ht.tdf Line: 35
+    Info (270002): Used 0 DSP blocks after DSP block balancing
+Info (12130): Elaborated megafunction instantiation "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1" File: C:/Users/asus/Desktop/sinos/db/mult_1ht.tdf Line: 35
+Info (12133): Instantiated megafunction "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1" with the following parameter: File: C:/Users/asus/Desktop/sinos/db/mult_1ht.tdf Line: 35
+    Info (12134): Parameter "MULT_REPRESENTATION_A" = "UNSIGNED"
+    Info (12134): Parameter "MULT_REPRESENTATION_B" = "UNSIGNED"
+    Info (12134): Parameter "MULT_PIPELINE" = "0"
+    Info (12134): Parameter "MULT_CLOCK" = "NONE"
+    Info (12134): Parameter "MULT_CLEAR" = "NONE"
+    Info (12134): Parameter "MULT_INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MULT_INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "dataa_width" = "16"
+    Info (12134): Parameter "datab_width" = "16"
+    Info (12134): Parameter "output_width" = "32"
+    Info (12134): Parameter "dataa_clock" = "NONE"
+    Info (12134): Parameter "datab_clock" = "NONE"
+    Info (12134): Parameter "signa_clock" = "NONE"
+    Info (12134): Parameter "signb_clock" = "NONE"
+    Info (12134): Parameter "output_clock" = "NONE"
+    Info (12134): Parameter "dataa_clear" = "NONE"
+    Info (12134): Parameter "datab_clear" = "NONE"
+    Info (12134): Parameter "signa_clear" = "NONE"
+    Info (12134): Parameter "signb_clear" = "NONE"
+    Info (12134): Parameter "output_clear" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mac_mult_r2h1.tdf
+    Info (12023): Found entity 1: mac_mult_r2h1 File: C:/Users/asus/Desktop/sinos/db/mac_mult_r2h1.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_jul.tdf
+    Info (12023): Found entity 1: mult_jul File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2" File: C:/Users/asus/Desktop/sinos/db/mult_1ht.tdf Line: 44
+Info (12133): Instantiated megafunction "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2" with the following parameter: File: C:/Users/asus/Desktop/sinos/db/mult_1ht.tdf Line: 44
+    Info (12134): Parameter "OPERATION_MODE" = "OUTPUT_ONLY"
+    Info (12134): Parameter "dataa_width" = "32"
+    Info (12134): Parameter "datab_width" = "0"
+    Info (12134): Parameter "datac_width" = "0"
+    Info (12134): Parameter "datad_width" = "0"
+    Info (12134): Parameter "output_width" = "32"
+    Info (12134): Parameter "signa_clock" = "NONE"
+    Info (12134): Parameter "signb_clock" = "NONE"
+    Info (12134): Parameter "addnsub0_clock" = "NONE"
+    Info (12134): Parameter "addnsub1_clock" = "NONE"
+    Info (12134): Parameter "zeroacc_clock" = "NONE"
+    Info (12134): Parameter "first_adder0_clock" = "NONE"
+    Info (12134): Parameter "first_adder1_clock" = "NONE"
+    Info (12134): Parameter "output_clock" = "NONE"
+    Info (12134): Parameter "signa_clear" = "NONE"
+    Info (12134): Parameter "signb_clear" = "NONE"
+    Info (12134): Parameter "addnsub0_clear" = "NONE"
+    Info (12134): Parameter "addnsub1_clear" = "NONE"
+    Info (12134): Parameter "zeroacc_clear" = "NONE"
+    Info (12134): Parameter "first_adder0_clear" = "NONE"
+    Info (12134): Parameter "first_adder1_clear" = "NONE"
+    Info (12134): Parameter "output_clear" = "NONE"
+    Info (12134): Parameter "signa_pipeline_clock" = "NONE"
+    Info (12134): Parameter "signb_pipeline_clock" = "NONE"
+    Info (12134): Parameter "addnsub0_pipeline_clock" = "NONE"
+    Info (12134): Parameter "addnsub1_pipeline_clock" = "NONE"
+    Info (12134): Parameter "zeroacc_pipeline_clock" = "NONE"
+    Info (12134): Parameter "signa_pipeline_clear" = "NONE"
+    Info (12134): Parameter "signb_pipeline_clear" = "NONE"
+    Info (12134): Parameter "addnsub0_pipeline_clear" = "NONE"
+    Info (12134): Parameter "addnsub1_pipeline_clear" = "NONE"
+    Info (12134): Parameter "zeroacc_pipeline_clear" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mac_out_kv82.tdf
+    Info (12023): Found entity 1: mac_out_kv82 File: C:/Users/asus/Desktop/sinos/db/mac_out_kv82.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2" File: C:/Users/asus/Desktop/sinos/db/mult_1ht.tdf Line: 44
+Info (12133): Instantiated megafunction "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2" with the following parameter: File: C:/Users/asus/Desktop/sinos/db/mult_1ht.tdf Line: 44
+    Info (12134): Parameter "OPERATION_MODE" = "OUTPUT_ONLY"
+    Info (12134): Parameter "dataa_width" = "32"
+    Info (12134): Parameter "datab_width" = "0"
+    Info (12134): Parameter "datac_width" = "0"
+    Info (12134): Parameter "datad_width" = "0"
+    Info (12134): Parameter "output_width" = "32"
+    Info (12134): Parameter "signa_clock" = "NONE"
+    Info (12134): Parameter "signb_clock" = "NONE"
+    Info (12134): Parameter "addnsub0_clock" = "NONE"
+    Info (12134): Parameter "addnsub1_clock" = "NONE"
+    Info (12134): Parameter "zeroacc_clock" = "NONE"
+    Info (12134): Parameter "first_adder0_clock" = "NONE"
+    Info (12134): Parameter "first_adder1_clock" = "NONE"
+    Info (12134): Parameter "output_clock" = "NONE"
+    Info (12134): Parameter "signa_clear" = "NONE"
+    Info (12134): Parameter "signb_clear" = "NONE"
+    Info (12134): Parameter "addnsub0_clear" = "NONE"
+    Info (12134): Parameter "addnsub1_clear" = "NONE"
+    Info (12134): Parameter "zeroacc_clear" = "NONE"
+    Info (12134): Parameter "first_adder0_clear" = "NONE"
+    Info (12134): Parameter "first_adder1_clear" = "NONE"
+    Info (12134): Parameter "output_clear" = "NONE"
+    Info (12134): Parameter "signa_pipeline_clock" = "NONE"
+    Info (12134): Parameter "signb_pipeline_clock" = "NONE"
+    Info (12134): Parameter "addnsub0_pipeline_clock" = "NONE"
+    Info (12134): Parameter "addnsub1_pipeline_clock" = "NONE"
+    Info (12134): Parameter "zeroacc_pipeline_clock" = "NONE"
+    Info (12134): Parameter "signa_pipeline_clear" = "NONE"
+    Info (12134): Parameter "signb_pipeline_clear" = "NONE"
+    Info (12134): Parameter "addnsub0_pipeline_clear" = "NONE"
+    Info (12134): Parameter "addnsub1_pipeline_clear" = "NONE"
+    Info (12134): Parameter "zeroacc_pipeline_clear" = "NONE"
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[17]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[17]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[15]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[14]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[13]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[12]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[15]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[14]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[13]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[12]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[11]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[10]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[9]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[17]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[17]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[15]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[14]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[13]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[12]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[15]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[14]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[13]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[12]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[11]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[10]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[9]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[15]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[14]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[13]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[12]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[11]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[10]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[9]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[8]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[7]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[6]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[5]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[4]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[11]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[10]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[9]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[8]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[7]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[6]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[5]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[4]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[3]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[2]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[8]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[7]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[6]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[5]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[4]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[3]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[2]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[1]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le4a[17]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 49
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[17]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 51
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 51
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[12]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 51
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[17]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 52
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 52
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[15]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 52
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[14]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 52
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[13]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 52
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[12]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 52
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[11]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 52
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[10]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 52
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[17]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[15]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[14]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[13]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[12]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[11]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[10]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[9]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[8]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[17]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[15]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[14]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[13]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[12]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[11]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[10]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[9]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[8]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[7]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[6]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[15]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[14]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[13]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[12]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[11]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[10]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[9]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[8]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[7]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[6]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[5]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le10a[4]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 46
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[11]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[10]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[9]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[8]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[7]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[6]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[5]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[4]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[3]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[2]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[8]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[7]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[6]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[5]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[4]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[3]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[2]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[1]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le4a[17]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 49
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[17]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 51
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 51
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[12]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 51
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[17]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 52
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 52
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[15]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 52
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[14]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 52
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[13]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 52
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[12]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 52
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[11]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 52
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le7a[10]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 52
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[17]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[15]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[14]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[13]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[12]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[11]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[10]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[9]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le8a[8]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 53
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[17]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[15]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[14]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[13]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[12]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[11]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[10]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[9]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[8]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[7]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le9a[6]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 54
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le4a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 49
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le5a[17]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 50
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le5a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 50
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le5a[15]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 50
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le5a[14]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 50
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[15]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 51
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[14]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 51
+        Warning (14320): Synthesized away node "Multi:inst12|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[13]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 51
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le4a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 49
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le5a[17]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 50
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le5a[16]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 50
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le5a[15]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 50
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le5a[14]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 50
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[15]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 51
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[14]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 51
+        Warning (14320): Synthesized away node "Multi:inst11|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le6a[13]" File: C:/Users/asus/Desktop/sinos/db/mult_jul.tdf Line: 51
+Info (13014): Ignored 442 buffer(s)
+    Info (13016): Ignored 32 CARRY_SUM buffer(s)
+    Info (13019): Ignored 410 SOFT buffer(s)
+Warning (13012): Latch multiplex:inst13|w[0] has unsafe behavior File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SV_controller:inst10|ps[0] File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 28
+Warning (13012): Latch multiplex:inst13|w[1] has unsafe behavior File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SV_controller:inst10|ps[0] File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 28
+Warning (13012): Latch multiplex:inst13|w[4] has unsafe behavior File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SV_controller:inst10|ps[0] File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 28
+Warning (13012): Latch multiplex:inst13|w[5] has unsafe behavior File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SV_controller:inst10|ps[0] File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 28
+Warning (13012): Latch multiplex:inst13|w[2] has unsafe behavior File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SV_controller:inst10|ps[0] File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 28
+Warning (13012): Latch multiplex:inst13|w[3] has unsafe behavior File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SV_controller:inst10|ps[0] File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 28
+Warning (13012): Latch multiplex:inst13|w[6] has unsafe behavior File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SV_controller:inst10|ps[0] File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 28
+Warning (13012): Latch multiplex:inst13|w[7] has unsafe behavior File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SV_controller:inst10|ps[0] File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 28
+Warning (13012): Latch multiplex:inst13|w[10] has unsafe behavior File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SV_controller:inst10|ps[0] File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 28
+Warning (13012): Latch multiplex:inst13|w[11] has unsafe behavior File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SV_controller:inst10|ps[0] File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 28
+Warning (13012): Latch multiplex:inst13|w[8] has unsafe behavior File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SV_controller:inst10|ps[0] File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 28
+Warning (13012): Latch multiplex:inst13|w[9] has unsafe behavior File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SV_controller:inst10|ps[0] File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 28
+Warning (13012): Latch multiplex:inst13|w[13] has unsafe behavior File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SV_controller:inst10|ps[0] File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 28
+Warning (13012): Latch multiplex:inst13|w[14] has unsafe behavior File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SV_controller:inst10|ps[0] File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 28
+Warning (13012): Latch multiplex:inst13|w[12] has unsafe behavior File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SV_controller:inst10|ps[0] File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 28
+Warning (13012): Latch multiplex:inst13|w[15] has unsafe behavior File: C:/Users/asus/Desktop/sinos/multiplex.v Line: 5
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SV_controller:inst10|ps[0] File: C:/Users/asus/Desktop/sinos/SV_controller.sv Line: 28
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 540 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 27 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 496 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 233 warnings
+    Info: Peak virtual memory: 739 megabytes
+    Info: Processing ended: Wed May 30 18:46:17 2018
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:39
+
+

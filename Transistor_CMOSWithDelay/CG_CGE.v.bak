@@ -1,0 +1,13 @@
+`timescale 1ns/1ns
+
+//CGE
+module CG_CGE(input a,b,e,output w);
+  wire ab,bb,eb,o1,o2,oo;
+  not#(7) n1(b,bb);
+  nand#(10) a1(a,bb,o1);
+  not#(7) n2(a,aa);
+  nand#(10) a2(aa,b,o2);
+  not#(7) n3(e,eb);
+  nand#(10) a3(o1,o2,oo);
+  nor#(14) L(oo,eb,w);
+endmodule

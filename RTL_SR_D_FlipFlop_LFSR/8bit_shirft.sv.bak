@@ -1,0 +1,27 @@
+`timescale 1ns/1ns
+module shift_latch(input[7:0] sin,input clock,output[7:0] sout);
+  logic[7:0] w0,w1,w2,w3,w4,w5,w6,w7;
+  bit_Latch h1(sin,clock,w0);
+  bit_Latch h2(w0,clock,w1);
+  bit_Latch h3(w1,clock,w2);
+  bit_Latch h4(w2,clock,w3);
+  bit_Latch h5(w3,clock,w4);
+  bit_Latch h6(w4,clock,w5);
+  bit_Latch h7(w5,clock,w6);
+  bit_Latch h8(w6,clock,sout);
+endmodule
+
+module TestShift();
+  logic[7:0] sin,soutl;
+  logic clock;
+  shift_latch SS(sin,clock,sout);
+  initial begin;
+    clock=1;
+    #(20)  sin=8'b11100010;
+    #(100) sin=8'b11111111;
+    #(100) sin=8'b10000000;
+  end
+endmodule
+    
+  
+  

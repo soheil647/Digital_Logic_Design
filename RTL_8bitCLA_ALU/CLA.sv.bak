@@ -1,0 +1,28 @@
+`timescale 1ns/1ns
+module CLA(input [7:0] dataA, dataB, input carryIn, output [7:0] dataOut, output carryout);
+  wire [7:0] p,g,c;
+  
+  genvar i;
+  
+  generate for(i=0;i<8;i=i+1) begin
+    assign p[i]=dataA[i] | dataB[i];
+    assign g[i]=dataA[i] & dataB[i];
+  end endgenerate
+ 
+ assign c[0]=(p[0]&carryIn)|(g[0]);
+ assign c[1]=(p[1]&p[0]&carryIn)|(p[1]&g[0])|(g[1]);
+ assign c[2]=(p[2]&p[1]&p[0]&carryIn)|(p[2]&p[1]&g[0])|(p[2]&g[1])|(g[2]);
+ assign c[3]=(p[3]&p[2]&p[1]&p[0]&carryIn)|(p[3]&p[2]&p[1]&g[0])|(p[3]&p[2]&g[1])|(p[3]&g[2])|(g[3]);
+ assign c[4]=(p[4]&p[3]&p[2]&p[1]&p[0]&carryIn)|(p[4]&p[3]&p[2]&p[1]&g[0])|(p[4]&p[3]&p[2]&g[1])|(p[4]&p[3]&g[2])|(p[4]&g[3])|(g[4]);
+ assign c[5]=(p[5]&p[4]&p[3]&p[2]&p[1]&p[0]&carryIn)|(p[5]&p[4]&p[3]&p[2]&p[1]&g[0])|(p[5]&p[4]&p[3]&p[2]&g[1])|(p[5]&p[4]&p[3]&g[2])|(p[5]&p[4]&g[3])|(p[5]&g[4])|(g[5]); 
+ assign c[6]=(p[6]&p[5]&p[4]&p[3]&p[2]&p[1]&p[0]&carryIn)|(p[6]&p[5]&p[4]&p[3]&p[2]&p[1]&g[0])|(p[6]&p[5]&p[4]&p[3]&p[2]&g[1])|(p[6]&p[5]&p[4]&p[3]&g[2])|(p[6]&p[5]&p[4]&g[3])|(p[6]&p[5]&g[4])|(p[6]&g[5])|(g[6]);
+ assign c[7]=(p[7]&p[6]&p[5]&p[4]&p[3]&p[2]&p[1]&p[0]&carryIn)|(p[7]&p[6]&p[5]&p[4]&p[3]&p[2]&p[1]&g[0])|(p[7]&p[6]&p[5]&p[4]&p[3]&p[2]&g[1])|(p[7]&p[6]&p[5]&p[4]&p[3]&g[2])|(p[7]&p[6]&p[5]&p[4]&g[3])|(p[7]&p[6]&p[5]&g[4])|(p[7]&p[6]&g[5])|(p[7]&g[6])|(g[7]);
+
+ 
+ genvar j;
+ generate for(j=0;j<8;j=j+1) begin
+   assign dataOut[j]=dataA[j]+dataB[j]+c[j];
+ end endgenerate
+ assign carryout = c[7];
+ 
+ endmodule

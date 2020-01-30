@@ -1,0 +1,63 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\asus\Desktop\Qproject\simulation\modelsim
+vhard_block
+Z1 IE=b[DNbh`2GmK?I:igXd]0
+Z2 V1m]i>AnE2>l?mEgJ@k?_m1
+Z3 dC:\Users\asus\Desktop\sinos\simulation\modelsim
+Z4 w1527689806
+Z5 8C:/Users/asus/Desktop/sinos/simulation/modelsim/sin.vo
+Z6 FC:/Users/asus/Desktop/sinos/simulation/modelsim/sin.vo
+Z7 L0 11131
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s108 1527689823.856000
+Z10 !s107 C:/Users/asus/Desktop/sinos/simulation/modelsim/sin.vo|
+Z11 !s90 -reportprogress|300|-work|work|C:/Users/asus/Desktop/sinos/simulation/modelsim/sin.vo|
+Z12 o-work work -O0
+!i10b 1
+Z13 !s100 3a>m9_do`5`ABJjRTKV6R2
+!s85 0
+!s101 -O0
+vsin
+Z14 IgUld1mei[D5zP<>EO6E>G2
+Z15 VMV6hRiAAgCkGCmckKzoQn0
+R3
+R4
+R5
+R6
+L0 31
+R8
+r1
+31
+R9
+R10
+R11
+R12
+!i10b 1
+Z16 !s100 kKJ6DMkLP>S1HYnckGHKJ0
+!s85 0
+!s101 -O0
+vTB_Sin
+!i10b 1
+!s100 Wh3R^2eMSO;=J?j@[]g?62
+Ili<`KQY`<oFdz;m_We:2S1
+Z17 VTMi=MkUlPZdTQnFUzWgPj1
+R3
+w1527689825
+Z18 8C:/Users/asus/Desktop/sinos/simulation/modelsim/TB_Sin.v
+Z19 FC:/Users/asus/Desktop/sinos/simulation/modelsim/TB_Sin.v
+L0 3
+R8
+r1
+!s85 0
+31
+!s108 1527689825.491000
+!s107 C:/Users/asus/Desktop/sinos/simulation/modelsim/TB_Sin.v|
+Z20 !s90 -reportprogress|300|-work|work|C:/Users/asus/Desktop/sinos/simulation/modelsim/TB_Sin.v|
+!s101 -O0
+R12
+Z21 n@t@b_@sin

@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at TR_Register.v(6): always construct contains both blocking and non-blocking assignments File: C:/Users/asus/Desktop/sinos/TR_Register.v Line: 6

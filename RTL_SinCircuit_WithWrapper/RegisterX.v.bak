@@ -1,0 +1,12 @@
+`timescale 1ps/1ps
+
+module x_Reg(input[15:0] Xin,input LX,clk,rst,output[15:0] Xout);
+
+	always@(posedge clk,posedge rst) begin
+		if(rst) Xout<=0; else begin
+			if(Lx) Xout<=Xin; 
+		end
+	end
+	
+endmodule
+		

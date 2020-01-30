@@ -1,0 +1,20 @@
+Fitter Status : Successful - Wed May 30 18:46:31 2018
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : sin
+Top-level Entity Name : sin
+Family : Cyclone IV GX
+Device : EP4CGX15BF14A7
+Timing Models : Final
+Total logic elements : 483 / 14,400 ( 3 % )
+    Total combinational functions : 480 / 14,400 ( 3 % )
+    Dedicated logic registers : 54 / 14,400 ( < 1 % )
+Total registers : 54
+Total pins : 44 / 81 ( 54 % )
+Total virtual pins : 0
+Total memory bits : 0 / 552,960 ( 0 % )
+Embedded Multiplier 9-bit elements : 0
+Total GXB Receiver Channel PCS : 0 / 2 ( 0 % )
+Total GXB Receiver Channel PMA : 0 / 2 ( 0 % )
+Total GXB Transmitter Channel PCS : 0 / 2 ( 0 % )
+Total GXB Transmitter Channel PMA : 0 / 2 ( 0 % )
+Total PLLs : 0 / 3 ( 0 % )

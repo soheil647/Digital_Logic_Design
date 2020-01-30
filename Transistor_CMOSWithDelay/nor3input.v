@@ -1,0 +1,12 @@
+`timescale 1ns/1ns
+module nor3(input a,b,c,output w);
+  supply1 Vdd;
+  supply0 GND;
+  wire g1;
+  pmos #(5,6,7) T1(g1,Vdd,a),
+                T2(g2,g1,b),
+                T3(w,g2,c);
+  nmos #(3,4,5) T4(w,GND,a),
+                T5(w,GND,b),
+                T6(w,GND,c);
+endmodule

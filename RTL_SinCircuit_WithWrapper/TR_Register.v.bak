@@ -1,0 +1,20 @@
+`timescale 1ps/1ps
+
+module TR_Reg(input[15:0] TR_in,input[15:0] Xin,input[7:0] y,input IN,LX,clk,rst,output[15:0] TR_out,output SigOut);
+
+	Sigout=1;
+
+	always@(posedge clk,posedge rst) begin
+		if(rst) TR_out<=0; else begin
+			if(IN) TR_out<=Xin;else begin
+				if(Lx) TR_out<=TR_in; 
+			end
+		end
+	end
+	
+	always@(TR_in) begin
+		if(TR_in<<y) Sigout<=0;
+	end
+	
+endmodule
+		

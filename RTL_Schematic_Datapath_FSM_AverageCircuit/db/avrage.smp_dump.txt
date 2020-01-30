@@ -1,0 +1,7 @@
+
+State Machine - |avrage|controller:inst|ps
+Name ps.11 ps.10 ps.01 ps.00 
+ps.00 0 0 0 0 
+ps.01 0 0 1 1 
+ps.10 0 1 0 1 
+ps.11 1 0 0 1 

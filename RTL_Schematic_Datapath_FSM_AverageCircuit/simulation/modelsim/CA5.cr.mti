@@ -1,0 +1,16 @@
+C:/Users/asus/Desktop/Qproject/simulation/modelsim/avrage.vo {1 {vlog -work work C:/Users/asus/Desktop/Qproject/simulation/modelsim/avrage.vo
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module avrage
+-- Compiling module hard_block
+
+Top level modules:
+	avrage
+
+} {} {}} C:/Users/asus/Desktop/Qproject/simulation/modelsim/tbq.sv {1 {vlog -work work -sv C:/Users/asus/Desktop/Qproject/simulation/modelsim/tbq.sv
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module testQ
+
+Top level modules:
+	testQ
+
+} {} {}}

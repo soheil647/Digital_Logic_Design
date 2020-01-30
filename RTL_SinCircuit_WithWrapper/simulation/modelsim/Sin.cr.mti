@@ -1,0 +1,16 @@
+C:/Users/asus/Desktop/sinos/simulation/modelsim/TB_Sin.v {1 {vlog -work work C:/Users/asus/Desktop/sinos/simulation/modelsim/TB_Sin.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module TB_Sin
+
+Top level modules:
+	TB_Sin
+
+} {} {}} C:/Users/asus/Desktop/sinos/simulation/modelsim/sin.vo {1 {vlog -work work C:/Users/asus/Desktop/sinos/simulation/modelsim/sin.vo
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module sin
+-- Compiling module hard_block
+
+Top level modules:
+	sin
+
+} {} {}}

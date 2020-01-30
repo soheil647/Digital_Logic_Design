@@ -1,0 +1,81 @@
+{C:/Users/asus/Desktop/ca4/Master_Slave Reset.sv} {1 {vlog -work work -vopt -sv {C:/Users/asus/Desktop/ca4/Master_Slave Reset.sv}
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module MS_LatchRST
+-- Compiling module testMS_RST
+
+Top level modules:
+	testMS_RST
+
+} {} {}} C:/Users/asus/Desktop/ca4/8bit_D_L.sv {1 {vlog -work work -vopt -sv C:/Users/asus/Desktop/ca4/8bit_D_L.sv
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module bit_Latch
+
+Top level modules:
+	bit_Latch
+
+} {} {}} C:/Users/asus/Desktop/ca4/8bit_MS_RST.sv {1 {vlog -work work -vopt -sv C:/Users/asus/Desktop/ca4/8bit_MS_RST.sv
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module GenMS
+-- Compiling module testGenMS
+
+Top level modules:
+	testGenMS
+
+} {} {}} C:/Users/asus/Desktop/ca4/Master_Slave.sv {1 {vlog -work work -vopt -sv C:/Users/asus/Desktop/ca4/Master_Slave.sv
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module MS_Latch
+-- Compiling module testMS
+
+Top level modules:
+	testMS
+
+} {} {}} C:/Users/asus/Desktop/ca4/always_shift.sv {1 {vlog -work work -vopt -sv C:/Users/asus/Desktop/ca4/always_shift.sv
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module alwshift
+-- Compiling module test_Alw
+
+Top level modules:
+	test_Alw
+
+} {} {}} C:/Users/asus/Desktop/ca4/LFSR.sv {1 {vlog -work work -vopt -sv C:/Users/asus/Desktop/ca4/LFSR.sv
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module LFSR
+-- Compiling module LFSR_tb
+
+Top level modules:
+	LFSR_tb
+
+} {} {}} C:/Users/asus/Desktop/ca4/D_L.sv {1 {vlog -work work -vopt -sv C:/Users/asus/Desktop/ca4/D_L.sv
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module D_L
+-- Compiling module TestD_L
+
+Top level modules:
+	D_L
+	TestD_L
+
+} {} {}} C:/Users/asus/Desktop/ca4/SR_Clock.sv {1 {vlog -work work -vopt -sv C:/Users/asus/Desktop/ca4/SR_Clock.sv
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module SR_L
+-- Compiling module TestSR_L
+
+Top level modules:
+	TestSR_L
+
+} {} {}} C:/Users/asus/Desktop/ca4/8bit_shift.sv {1 {vlog -work work -vopt -sv C:/Users/asus/Desktop/ca4/8bit_shift.sv
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module shift
+-- Compiling module TestShift
+
+Top level modules:
+	TestShift
+
+} {} {}} C:/Users/asus/Desktop/ca4/MS_Shirftrigester.sv {1 {vlog -work work -vopt -sv C:/Users/asus/Desktop/ca4/MS_Shirftrigester.sv
+Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+-- Compiling module MS_Shirftrigester
+-- Compiling module Test_MS_Shift
+
+Top level modules:
+	Test_MS_Shift
+
+} {} {}}

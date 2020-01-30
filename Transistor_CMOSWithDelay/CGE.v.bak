@@ -1,0 +1,13 @@
+`timescale 1ns/1ns
+
+//CGE
+module CGE(input a,b,e,output w);
+  wire ab,bb,eb,o1,o2,oo;
+  inv1 n1(b,bb);
+  nand1 a1(a,bb,o1);
+  inv1 n2(a,aa);
+  nand1 a2(aa,b,o2);
+  inv1 n3(e,eb);
+  nand1 a3(o1,o2,oo);
+  nor1 L(oo,eb,w);
+endmodule

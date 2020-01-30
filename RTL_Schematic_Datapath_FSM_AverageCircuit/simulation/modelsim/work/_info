@@ -1,0 +1,66 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\asus\Desktop\MProject
+vavrage
+Z1 !s100 ]cB;IX@JZ9n^_BO=73g@:2
+Z2 IF<Y]IBKofb72?M5ObQ]<d0
+Z3 VgozT8:GEzPn2`OGBNYh@i1
+Z4 dC:\Users\asus\Desktop\Qproject\simulation\modelsim
+Z5 w1526491162
+Z6 8C:/Users/asus/Desktop/Qproject/simulation/modelsim/avrage.vo
+Z7 FC:/Users/asus/Desktop/Qproject/simulation/modelsim/avrage.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s108 1526491406.641000
+Z10 !s107 C:/Users/asus/Desktop/Qproject/simulation/modelsim/avrage.vo|
+Z11 !s90 -reportprogress|300|-work|work|C:/Users/asus/Desktop/Qproject/simulation/modelsim/avrage.vo|
+Z12 o-work work -O0
+!i10b 1
+!s85 0
+!s101 -O0
+vhard_block
+Z13 !s100 dm@THWcU1A625UgiU[l2X2
+Z14 I>G9gAXLE8QXmm7cLdODo43
+Z15 V1m]i>AnE2>l?mEgJ@k?_m1
+R4
+R5
+R6
+R7
+Z16 L0 482
+R8
+r1
+31
+R9
+R10
+R11
+R12
+!i10b 1
+!s85 0
+!s101 -O0
+vtestQ
+Z17 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+!i10b 1
+!s100 E@:`U2GK_=:9TVC5YVH]j1
+IjE^jR^4gSzzm8b8zU=Y<G1
+Z18 VDb=zCicS;>^5J11TnV_0V0
+Z19 !s105 tbq_sv_unit
+S1
+R4
+w1526491407
+Z20 8C:/Users/asus/Desktop/Qproject/simulation/modelsim/tbq.sv
+Z21 FC:/Users/asus/Desktop/Qproject/simulation/modelsim/tbq.sv
+L0 2
+R8
+r1
+!s85 0
+31
+!s108 1526491407.856000
+!s107 C:/Users/asus/Desktop/Qproject/simulation/modelsim/tbq.sv|
+Z22 !s90 -reportprogress|300|-work|work|-sv|C:/Users/asus/Desktop/Qproject/simulation/modelsim/tbq.sv|
+!s101 -O0
+Z23 o-work work -sv -O0
+Z24 ntest@q

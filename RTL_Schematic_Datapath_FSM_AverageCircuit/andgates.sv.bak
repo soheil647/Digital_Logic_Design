@@ -1,0 +1,14 @@
+`timescale 1ns/1ns
+
+module andgates(input[10:0] a,input co,output[10:0] w);
+	wire[10:0] o;
+	
+	genvar i;
+	generate for(i=0;i<12;i=i+1) begin
+	and(w[i],a[i],co)
+	end	endgenerate
+	
+	assign w={3'b0:o[11:3]};
+	
+	endmodule
+	

@@ -1,0 +1,23 @@
+`timescale  1ns/1ns
+
+//CGG
+module CGG(input a,b,e,g,output w);
+  wire gb,bb,eb,o1;
+  inv1 n1(b,bb);
+  nand3 a1(a,bb,e,o1);
+  inv1 n2(g,gb);
+  nand1 a2(o1,gb,w);
+endmodule
+
+module testbeanchnew();
+  reg a=0,b=0,e=0,g=0;
+  wire w;
+  CGG test1(a,b,e,g,w);
+  initial begin 
+    #(4) a=1;
+    #(4) a=0;b=1;e=1;g=1;
+  end
+endmodule
+
+  
+  
